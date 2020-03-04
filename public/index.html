@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script><link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CLato%7CKalam:300,400,700">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/my_css.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-bell">
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+          <div class="cssload-circle">
+            <div class="cssload-inner"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <!-- Page Header-->
+      <header class="section page-header header-creative-wrap context-dark">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-creative rd-navbar-creative-2" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="100px" data-xl-stick-up-offset="112px" data-xxl-stick-up-offset="132px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-aside-outer">
+              <div class="rd-navbar-aside">
+                <div class="rd-navbar-collapse">
+                  <ul class="contacts-classic">
+                    <li><span class="contacts-classic-title">前端github地址</span> <a class="link" href="tel:#">+1 (844) 123 456 78</a>
+                    </li>
+                    <li><a href="mailto:#">同济大学软件学院sitp</a></li>
+                  </ul><a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202" href="#"><span>2</span></a>
+                </div>
+                <!-- RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!-- RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <!-- RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                    <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-default-234x82.png" alt="" width="117" height="41"/><img class="brand-logo-light" src="images/logo-inverse-234x82.png" alt="" width="117" height="41"/></a>
+                  </div>
+                </div>
+                <div class="rd-navbar-aside-element">
+
+
+
+                  <!-- RD Navbar Search-->
+                  <div class="rd-navbar-search rd-navbar-search-2">
+                    <button class="rd-navbar-search-toggle rd-navbar-fixed-element-3" data-rd-navbar-toggle=".rd-navbar-search"><span></span></button>
+                    <form class="rd-search" action="search-results.html" data-search-live="rd-search-results-live" method="GET">
+                      <div class="form-wrap">
+                        <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="key" />
+                        <label class="form-label" for="rd-navbar-search-form-input">根据名称查询新番...</label>
+                        <div class="rd-search-results-live" id="rd-search-results-live"></div>
+                        <button class="rd-search-form-submit fl-bigmug-line-search74" type="submit"></button>
+                      </div>
+                    </form>
+                  </div>
+
+                  
+
+  
+                 
+                </div>
+              </div>
+            </div>
+
+            
+
+
+
+
+            <div class="rd-navbar-main-outer" id="navbar" >
+
+                <transition-group name='login'>
+                <div class="login_bg" v-if="login_show" key='bg'>
+
+                    <i class="fl-bigmug-line-close42 login_close" v-on:click="login_show=0"></i>
+                    <div class="login_word" >登录</div>
+                    <input class=" form-input user_name"  type="text"   placeholder="用户名" >
+                    <input class=" form-input pass_word" placeholder="密码" type="password" >
+                  
+
+                </div>
+              </transition-group>
+
+              <div class="rd-navbar-main">
+                <div class="rd-navbar-nav-wrap">
+                  <ul class="rd-navbar-nav">
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="rd-nav-item ">
+
+                        <span class="rd-nav-link" v-on:click="handleClick">Mine</span>
+                       
+
+                    </li>
+                  
+                  
+                   
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+
+      <!-- Swiper-->
+      <section class="section swiper-container swiper-slider swiper-slider-4" data-loop="true" data-autoplay="5000">
+        <div class="swiper-wrapper context-dark">
+          <div class="swiper-slide swiper-slide-1" data-slide-bg="images/slide-1.jpg">
+            <div class="swiper-slide-caption section-md text-sm-left">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-8 col-md-7">
+                    <h2 class="swiper-title-1" data-caption-animate="fadeInLeft" data-caption-delay="100">Tasty Way <br>to Healthier Life
+                    </h2>
+                    <h5 class="swiper-title-2 text-width-medium" data-caption-animate="fadeInLeft" data-caption-delay="250">Our organic food contains all necessary elements and vitamins for your health.</h5>
+                    <div class="button-wrap" data-caption-animate="fadeInLeft" data-caption-delay="400"><a class="button button-lg button-shadow-5 button-default-outline button-zakaria" href="grid-shop.html">Shop now</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide-2" data-slide-bg="images/slide-2.jpg">
+            <div class="swiper-slide-caption section-md text-center">
+              <div class="container">
+                <h2 class="swiper-title-1" data-caption-animate="fadeInLeft" data-caption-delay="100">Make Your Food Organic</h2>
+                <h5 class="swiper-title-2" data-caption-animate="fadeInRight" data-caption-delay="250">With our wide variety of vegan & organic food products, we are sure <br class="d-none d-md-block">to help you make the right choice to start your day.
+                </h5>
+                <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a class="button button-lg button-shadow-5 button-default-outline button-zakaria" href="grid-shop.html">Shop now</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Swiper Pagination-->
+        <div class="swiper-pagination"></div>
+        <!-- Swiper Navigation-->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </section>
+      
+      <!-- index items-->
+      <section class="section section-xxl bg-default" id="index_rec">
+        <div class="container">
+          <h2 class="text-transform-capitalize wow fadeScale">热门番剧</h2>
+
+          <div class="row row-lg row-30 row-lg-50">
+
+            <div class="col-sm-6 col-md-4 col-lg-3" v-for="anime in animes">
+              <!-- Product-->
+              <article class="product wow fadeInRight">
+                <div class="product-body">
+                  <div class="product-figure"><img src="https://lain.bgm.tv/pic/cover/c/01/88/899_Q3F3X.jpg" alt="" width="196" height="134"/>
+                  </div>
+                  <h5 class="product-title"><a href="single-product.html">{{anime.name}}</a></h5>
+                  <div class="product-price-wrap">
+                   
+                    <div class="product-price">$23.00</div>
+                  </div>
+                </div>
+                <!--span class="product-badge product-badge-sale" --><!--/span-->
+                <div class="product-button-wrap">
+                  <div class="product-button"><a class="button button-secondary button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
+                  <div class="product-button"><a class="button button-primary button-zakaria fl-bigmug-line-favourites5" href="#"></a></div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="pagination-wrap">
+            <!-- Bootstrap Pagination-->
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="page-item page-item-control disabled"><a class="page-link" href="#" aria-label="Previous"><span class="icon" aria-hidden="true"></span></a></li>
+                <li class="page-item active"><span class="page-link">1</span></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item page-item-control"><a class="page-link" href="#" aria-label="Next"><span class="icon" aria-hidden="true"></span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      <!-- Counter Modern-->
+      <section class="parallax-container" data-parallax-img="images/parallax-2.jpg">
+        <div class="parallax-content section-xxl context-dark">
+          <div class="container">
+            <div class="row row-30 justify-content-center">
+              <div class="col-6 col-sm-3">
+                <div class="counter-modern">
+                  <h2 class="counter-modern-number"><span class="counter">245</span>
+                  </h2>
+                  <div class="counter-modern-decor"></div>
+                  <h5 class="counter-modern-title">New food products<br class="d-none d-sm-block"> and drinks</h5>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="counter-modern">
+                  <h2 class="counter-modern-number"><span class="counter">182</span>
+                  </h2>
+                  <div class="counter-modern-decor"></div>
+                  <h5 class="counter-modern-title">Special<br class="d-none d-sm-block"> offers</h5>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="counter-modern">
+                  <h2 class="counter-modern-number"><span class="counter">1267</span>
+                  </h2>
+                  <div class="counter-modern-decor"></div>
+                  <h5 class="counter-modern-title">Satisfied<br class="d-none d-sm-block"> clients</h5>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="counter-modern">
+                  <h2 class="counter-modern-number"><span class="counter">47</span>
+                  </h2>
+                  <div class="counter-modern-decor"></div>
+                  <h5 class="counter-modern-title">Partners throughout<br class="d-none d-sm-block"> the USA</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Section Product and Clients-->
+      
+      <!-- What People Say-->
+      <section class="section section-xxl bg-image-1">
+        <div class="container">
+          <h2 class="text-transform-capitalize wow fadeScale">What People Say</h2>
+          <div class="row row-sm row-30 justify-content-center">
+            <div class="col-xl-9">
+              <div class="slick-quote">
+                <!-- Slick Carousel-->
+                <div class="slick-slider carousel-parent" id="carousel-parent" data-autoplay="true" data-swipe="true" data-items="1" data-child="#child-carousel" data-for="#child-carousel">
+                  <div class="item">
+                    <p class="quote-minimal-text">I absolutely love the high quality of the food and the great customer service. I’ve been customers since 2006 and love the Burgundy Pepper London Broil.</p>
+                  </div>
+                  <div class="item">
+                    <p class="quote-minimal-text">I love not having to run to the grocery store all the time for last minute things. Everything I need is already here and it’s healthier, hormone-free.</p>
+                  </div>
+                  <div class="item">
+                    <p class="quote-minimal-text">As a 5+ year customer, I enjoy the quality of vegetables knowing that my family is getting good quality products. A great experience all the way round.</p>
+                  </div>
+                </div>
+                <div class="slick-quote-nav">
+                  <div class="slick-slider child-carousel" id="child-carousel" data-arrows="true" data-for="#carousel-parent" data-items="1" data-sm-items="1" data-md-items="3" data-lg-items="3" data-xl-items="3" data-xxl-items="3">
+                    <div class="item">
+                      <div class="quote-minimal-figure"><img src="images/user-7-87x87.jpg" alt="" width="87" height="87"/>
+                      </div>
+                      <div class="quote-minimal-author">Patricia Goodman</div>
+                      <div class="quote-minimal-status">Client</div>
+                    </div>
+                    <div class="item">
+                      <div class="quote-minimal-figure"><img src="images/user-8-87x87.jpg" alt="" width="87" height="87"/>
+                      </div>
+                      <div class="quote-minimal-author">Jane Smith</div>
+                      <div class="quote-minimal-status">Client</div>
+                    </div>
+                    <div class="item">
+                      <div class="quote-minimal-figure"><img src="images/user-9-87x87.jpg" alt="" width="87" height="87"/>
+                      </div>
+                      <div class="quote-minimal-author">Sam Wilson</div>
+                      <div class="quote-minimal-status">Client</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Masonry Gallery-->
+      
+      <!-- Subscribe to Our Newsletter-->
+      <section class="parallax-container" data-parallax-img="images/parallax-4.jpg">
+        <div class="parallax-content section-xxl context-dark text-md-left">
+          <div class="container">
+            <div class="row row-30 justify-content-center align-items-center align-items-md-end">
+              <div class="col-lg-3">
+                <h3 class="text-spacing-100 wow fadeInLeft">Stay <span class="font-weight-light">connected</span>
+                </h3>
+                <p class="wow fadeInLeft" data-wow-delay=".1s">Subscribe to our newsletter</p>
+              </div>
+              <div class="col-lg-9 inset-lg-bottom-10">
+                <!-- RD Mailform-->
+                <form class="rd-form rd-mailform rd-form-inline form-lg rd-form-text-center" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                  <div class="form-wrap wow fadeInUp">
+                    <input class="form-input" id="subscribe-form-0-email" type="email" name="email" data-constraints="@Email @Required"/>
+                    <label class="form-label" for="subscribe-form-0-email">Enter your e-mail address</label>
+                  </div>
+                  <div class="form-button wow fadeInRight">
+                    <button class="button button-shadow-2 button-zakaria button-lg button-primary" type="submit">Subscribe</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Our Team-->
+      
+      <!-- Section Clients-->
+    
+     
+      <!-- Page Footer-->
+      <footer class="section footer-modern footer-modern-2">
+        <div class="footer-modern-body section-xl context-dark">
+          <div class="container">
+            <div class="row row-40 row-md-50 justify-content-xl-between">
+              <div class="col-md-10 col-lg-3 col-xl-4 wow fadeInRight">
+                <div class="inset-xl-right-70 block-1">
+                  <h5 class="footer-modern-title">Gallery</h5>
+                  <div class="row row-10 gutters-10" data-lightgallery="group">
+                    <div class="col-4 col-sm-2 col-lg-4">
+                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-footer-1-1200x800-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-1-93x93.jpg" alt="" width="93" height="93"/></a>
+                    </div>
+                    <div class="col-4 col-sm-2 col-lg-4">
+                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-footer-2-1200x800-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-2-93x93.jpg" alt="" width="93" height="93"/></a>
+                    </div>
+                    <div class="col-4 col-sm-2 col-lg-4">
+                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-footer-3-1200x800-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-3-93x93.jpg" alt="" width="93" height="93"/></a>
+                    </div>
+                    <div class="col-4 col-sm-2 col-lg-4">
+                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-footer-4-1200x800-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-4-93x93.jpg" alt="" width="93" height="93"/></a>
+                    </div>
+                    <div class="col-4 col-sm-2 col-lg-4">
+                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-footer-5-1200x800-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-5-93x93.jpg" alt="" width="93" height="93"/></a>
+                    </div>
+                    <div class="col-4 col-sm-2 col-lg-4">
+                      <!-- Thumbnail Minimal--><a class="thumbnail-minimal" href="images/grid-gallery-footer-6-1200x800-original.jpg" data-lightgallery="item"><img src="images/grid-gallery-6-93x93.jpg" alt="" width="93" height="93"/></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-7 col-lg-5 wow fadeInRight" data-wow-delay=".1s">
+                <h5 class="footer-modern-title">Quick Links</h5>
+                <ul class="footer-modern-list footer-modern-list-2 d-sm-inline-block d-md-block">
+                  <li><a href="our-team.html">Our Team</a></li>
+                  <li><a href="grid-shop.html">New Products</a></li>
+                  <li><a href="blog-list.html">Blog</a></li>
+                  <li><a href="about-us.html">About Us</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="contact-us.html">Contact Us</a></li>
+                  <li><a href="#">Smoothies</a></li>
+                  <li><a href="#">Energy Bowls</a></li>
+                  <li><a href="#">Juices</a></li>
+                  <li><a href="#">Ingredients</a></li>
+                  <li><a href="#">Delivery</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 wow fadeInRight" data-wow-delay=".2s">
+                <h5 class="footer-modern-title">Get in touch</h5>
+                <ul class="contacts-creative">
+                  <li>
+                    <div class="unit unit-spacing-sm flex-column flex-md-row">
+                      <div class="unit-left"><span class="icon mdi mdi-map-marker"></span></div>
+                      <div class="unit-body"><a href="#">523 Sylvan Ave, 5th Floor<br/>Mountain View, CA 94041 USA</a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-sm flex-column flex-md-row">
+                      <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
+                      <div class="unit-body"><a href="tel:#">+1 (844) 123 456 78</a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-sm flex-column flex-md-row">
+                      <div class="unit-left"><span class="icon mdi mdi-email-outline"></span></div>
+                      <div class="unit-body"><a href="mailto:#">info@demolink.org</a></div>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="list-inline list-social-3 list-inline-sm">
+                  <li><a class="icon mdi mdi-facebook icon-xxs" href="#"></a></li>
+                  <li><a class="icon mdi mdi-twitter icon-xxs" href="#"></a></li>
+                  <li><a class="icon mdi mdi-instagram icon-xxs" href="#"></a></li>
+                  <li><a class="icon mdi mdi-google-plus icon-xxs" href="#"></a></li>
+                  <li><a class="icon mdi mdi-skype icon-xxs" href="#"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-modern-panel text-center">
+          <div class="container">
+            <p class="rights"><span>Copyright &copy; 2020.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></span></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/vm_index.js" type="module"></script>
+  </body>
+</html>
