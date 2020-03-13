@@ -3,13 +3,31 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js
 
 window.onload = function(){
 
-/*axios.get('http://167.179.81.168:8010/CB/305')
-.then(function(response){console.log(response)});*/
+
+
+
    
 var search = window.location.search;
 var page_key = getSearchString('page',search);
 index_rec.cur_page=page_key>0?parseInt(page_key):1;
 
+
+axios.get('http://167.179.81.168/bangumiAll/'+index_rec.cur_page)
+.then(function(response){
+    var data = response.data;
+    console.log(data);
+    for(var i = 0;i < data.length;i++){
+
+        var new_anime = {
+            name:data[i].name,
+            id:data[i].bangumi_id,
+            cover_url:data[i].cover_url,
+            score:data[i].bangumi_score
+        }
+        index_rec.animes.push(new_anime);
+    }
+
+});
 
 
 }
@@ -22,35 +40,17 @@ var index_rec = new Vue({
     el:'#index_rec',
     data:{
         cur_page:4,
-        total_page:300,
-        animes:[
-            {name:'名侦探柯南',id:51,cover_url:'https://lain.bgm.tv/pic/cover/c/01/88/899_Q3F3X.jpg',score:7.6},
-            {name:'2'},
-            {name:'3'},
-            {name:'4'},
-            {name:'5'},
-            {name:'6'},
-            {name:'7'},
-            {name:'8'},
-            {name:'1'},
-            {name:'2'},
-            {name:'3'},
-            {name:'4'},
-            {name:'5'},
-            {name:'6'},
-            {name:'7'},
-            {name:'8'},
-            {name:'1'},
-            {name:'2'},
-            {name:'3'},
-            {name:'4'}
-            
+        total_page:223,
+        animes:[  
         ]
     },
     methods:{
 
     }
 })
+
+
+
 
 
 var navbar = new Vue({

@@ -192,6 +192,7 @@
         isNoviBuilder = window.xMode;
 
         function initOwlCarousel(c) {
+            
             var aliaces = ["-", "-sm-", "-md-", "-lg-", "-xl-", "-xxl-"],
                 values = [0, 576, 768, 992, 1200, 1600],
                 responsive = {};
@@ -603,7 +604,9 @@
         }
 
         function setRealPrevious(swiper) {
+           
             var element = swiper.$wrapperEl[0].children[swiper.activeIndex];
+
             swiper.realPrevious = Array.prototype.indexOf.call(element.parentNode.children, element);
         }
 
@@ -620,6 +623,8 @@
                     slidesPerView: sliderMarkup.getAttribute('data-slides') || 1,
                     spaceBetween: Number(sliderMarkup.getAttribute('data-margin')) || 0
                 };
+                
+              
             if (Number(autoplayAttr)) {
                 options.autoplay = {
                     delay: Number(autoplayAttr),
@@ -659,6 +664,7 @@
                 };
             }
             for (var s = 0; s < slides.length; s++) {
+             
                 var
                     slide = slides[s],
                     url = slide.getAttribute('data-slide-bg');

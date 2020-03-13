@@ -59,7 +59,7 @@
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
                   <div class="rd-navbar-brand">
-                    <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-default-234x82.png" alt="" width="117" height="41"/><img class="brand-logo-light" src="images/logo-inverse-234x82.png" alt="" width="117" height="41"/></a>
+                    <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-light" src="images/logo.png" alt="" width="117" height="41"/></a>
                   </div>
                 </div>
                 <div class="rd-navbar-aside-element">
@@ -133,31 +133,32 @@
       <!-- Swiper-->
       <section class="section swiper-container swiper-slider swiper-slider-4" data-loop="true" data-autoplay="5000">
         <div class="swiper-wrapper context-dark">
-          <div class="swiper-slide swiper-slide-1" data-slide-bg="images/slide-1.jpg">
+          <div class="swiper-slide swiper-slide-1" data-slide-bg="images/promare.jpg">
             <div class="swiper-slide-caption section-md text-sm-left">
               <div class="container">
                 <div class="row">
                   <div class="col-sm-8 col-md-7">
-                    <h2 class="swiper-title-1" data-caption-animate="fadeInLeft" data-caption-delay="100">Tasty Way <br>to Healthier Life
+                    <h2 class="swiper-title-1" data-caption-animate="fadeInLeft" data-caption-delay="100" >Promare
                     </h2>
-                    <h5 class="swiper-title-2 text-width-medium" data-caption-animate="fadeInLeft" data-caption-delay="250">Our organic food contains all necessary elements and vitamins for your health.</h5>
-                    <div class="button-wrap" data-caption-animate="fadeInLeft" data-caption-delay="400"><a class="button button-lg button-shadow-5 button-default-outline button-zakaria" href="grid-shop.html">Shop now</a></div>
+                    <h5 class="swiper-title-2 text-width-medium" data-caption-animate="fadeInLeft" data-caption-delay="250">和trigger一起点燃宇宙</h5>
+                    <div class="button-wrap" data-caption-animate="fadeInLeft" data-caption-delay="400"><a class="button button-lg button-shadow-5 button-default-outline button-zakaria" href="anime_info.html?id=218713">查看详情</a></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="swiper-slide swiper-slide-2" data-slide-bg="images/slide-2.jpg">
+          <div class="swiper-slide swiper-slide-2" data-slide-bg="images/bingo.jpeg">
             <div class="swiper-slide-caption section-md text-center">
               <div class="container">
-                <h2 class="swiper-title-1" data-caption-animate="fadeInLeft" data-caption-delay="100">Make Your Food Organic</h2>
-                <h5 class="swiper-title-2" data-caption-animate="fadeInRight" data-caption-delay="250">With our wide variety of vegan & organic food products, we are sure <br class="d-none d-md-block">to help you make the right choice to start your day.
+                <h2 class="swiper-title-1" data-caption-animate="fadeInLeft" data-caption-delay="100">冰菓</h2>
+                <h5 class="swiper-title-2" data-caption-animate="fadeInRight" data-caption-delay="250">”我很好奇！“<br class="d-none d-md-block">
                 </h5>
-                <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a class="button button-lg button-shadow-5 button-default-outline button-zakaria" href="grid-shop.html">Shop now</a></div>
+                <div class="button-wrap" data-caption-animate="fadeInUp" data-caption-delay="400"><a class="button button-lg button-shadow-5 button-default-outline button-zakaria" href="anime_info.html?id=27364">查看详情</a></div>
               </div>
             </div>
           </div>
         </div>
+       
         <!-- Swiper Pagination-->
         <div class="swiper-pagination"></div>
         <!-- Swiper Navigation-->
@@ -176,9 +177,9 @@
               <!-- Product-->
               <article class="product wow fadeInRight">
                 <div class="product-body">
-                  <div class="product-figure"><img src="https://lain.bgm.tv/pic/cover/c/01/88/899_Q3F3X.jpg" alt="" width="196" height="134"/>
+                  <div class="product-figure"><img v-bind:src='anime.cover_url' alt="" width="196" height="134"/>
                   </div>
-                  <h5 class="product-title"><a href="single-product.html">{{anime.name}}</a></h5>
+                  <h5 class="product-title"><a href="anime_info.html">{{anime.name}}</a></h5>
                   <div class="product-price-wrap">
                    
                     <div class="product-price">{{anime.score}}</div>
@@ -186,7 +187,7 @@
                 </div>
                 <!--span class="product-badge product-badge-sale" --><!--/span-->
                 <div class="product-button-wrap">
-                  <div class="product-button"><a class="button button-secondary button-zakaria fl-bigmug-line-search74" v-bind:href="'single-product.html?id='+anime.id"></a></div>
+                  <div class="product-button"><a class="button button-secondary button-zakaria fl-bigmug-line-search74" v-bind:href="'anime_info.html?id='+anime.id"></a></div>
                   <div class="product-button"><a class="button button-primary button-zakaria fl-bigmug-line-favourites5" href="#"></a></div>
                 </div>
               </article>
@@ -204,7 +205,7 @@
 
                 <li class="page-item " v-if="cur_page>1" ><a class="page-link" v-bind:href="'/index.html?page='+(cur_page-1)">{{cur_page-1}}</a></li>
                 <li class="page-item active"><a class="page-link" v-bind:href="'/index.html?page='+cur_page">{{cur_page}}</a></li>
-                <li class="page-item " v-if="cur_page<300"><a class="page-link" v-bind:href="'/index.html?page='+(cur_page+1)">{{cur_page+1}}</a></li>
+                <li class="page-item " v-if="cur_page<total_page"><a class="page-link" v-bind:href="'/index.html?page='+(cur_page+1)">{{cur_page+1}}</a></li>
 
                 <li class="page-item" v-if="cur_page<total_page-2"><a class="page-link">...</a></li>
 
@@ -261,79 +262,9 @@
       <!-- Section Product and Clients-->
       
       <!-- What People Say-->
-      <section class="section section-xxl bg-image-1">
-        <div class="container">
-          <h2 class="text-transform-capitalize wow fadeScale">What People Say</h2>
-          <div class="row row-sm row-30 justify-content-center">
-            <div class="col-xl-9">
-              <div class="slick-quote">
-                <!-- Slick Carousel-->
-                <div class="slick-slider carousel-parent" id="carousel-parent" data-autoplay="true" data-swipe="true" data-items="1" data-child="#child-carousel" data-for="#child-carousel">
-                  <div class="item">
-                    <p class="quote-minimal-text">I absolutely love the high quality of the food and the great customer service. I’ve been customers since 2006 and love the Burgundy Pepper London Broil.</p>
-                  </div>
-                  <div class="item">
-                    <p class="quote-minimal-text">I love not having to run to the grocery store all the time for last minute things. Everything I need is already here and it’s healthier, hormone-free.</p>
-                  </div>
-                  <div class="item">
-                    <p class="quote-minimal-text">As a 5+ year customer, I enjoy the quality of vegetables knowing that my family is getting good quality products. A great experience all the way round.</p>
-                  </div>
-                </div>
-                <div class="slick-quote-nav">
-                  <div class="slick-slider child-carousel" id="child-carousel" data-arrows="true" data-for="#carousel-parent" data-items="1" data-sm-items="1" data-md-items="3" data-lg-items="3" data-xl-items="3" data-xxl-items="3">
-                    <div class="item">
-                      <div class="quote-minimal-figure"><img src="images/user-7-87x87.jpg" alt="" width="87" height="87"/>
-                      </div>
-                      <div class="quote-minimal-author">Patricia Goodman</div>
-                      <div class="quote-minimal-status">Client</div>
-                    </div>
-                    <div class="item">
-                      <div class="quote-minimal-figure"><img src="images/user-8-87x87.jpg" alt="" width="87" height="87"/>
-                      </div>
-                      <div class="quote-minimal-author">Jane Smith</div>
-                      <div class="quote-minimal-status">Client</div>
-                    </div>
-                    <div class="item">
-                      <div class="quote-minimal-figure"><img src="images/user-9-87x87.jpg" alt="" width="87" height="87"/>
-                      </div>
-                      <div class="quote-minimal-author">Sam Wilson</div>
-                      <div class="quote-minimal-status">Client</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <!-- Masonry Gallery-->
       
       <!-- Subscribe to Our Newsletter-->
-      <section class="parallax-container" data-parallax-img="images/parallax-4.jpg">
-        <div class="parallax-content section-xxl context-dark text-md-left">
-          <div class="container">
-            <div class="row row-30 justify-content-center align-items-center align-items-md-end">
-              <div class="col-lg-3">
-                <h3 class="text-spacing-100 wow fadeInLeft">Stay <span class="font-weight-light">connected</span>
-                </h3>
-                <p class="wow fadeInLeft" data-wow-delay=".1s">Subscribe to our newsletter</p>
-              </div>
-              <div class="col-lg-9 inset-lg-bottom-10">
-                <!-- RD Mailform-->
-                <form class="rd-form rd-mailform rd-form-inline form-lg rd-form-text-center" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-                  <div class="form-wrap wow fadeInUp">
-                    <input class="form-input" id="subscribe-form-0-email" type="email" name="email" data-constraints="@Email @Required"/>
-                    <label class="form-label" for="subscribe-form-0-email">Enter your e-mail address</label>
-                  </div>
-                  <div class="form-button wow fadeInRight">
-                    <button class="button button-shadow-2 button-zakaria button-lg button-primary" type="submit">Subscribe</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <!-- Our Team-->
       
       <!-- Section Clients-->

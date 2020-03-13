@@ -15358,6 +15358,10 @@ html.rd-navbar-fixed-linked .page {
     padding-bottom: 8%
 }
 
+.rd-navbar-static-linked .header-creative-wrap+.swiper-slider-4 .swiper-slide-3 {
+    padding-bottom: 8%
+}
+
 .swiper-scrollbar-1 .swiper-scrollbar-drag {
     background: 0 0
 }
