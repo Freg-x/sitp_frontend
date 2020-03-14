@@ -30,27 +30,19 @@ axios.get('http://167.179.81.168/bangumi/'+anime_id)
 
 axios.get('http://167.179.81.168:8010/CB/'+anime_id)
 .then(function(response){
-    data = response.data;
-    console.log(data);
-    for(var i = 0; i < 8;i++){
-
-    axios.get('http://167.179.81.168/bangumiAll/'+data[i])
-    .then(function(response){
     var data = response.data;
     console.log(data);
-    for(var i = 0;i < data.length;i++){
+   for(var i = 0;i < data.length;i++){
 
-        var new_anime = {
-            name:data[i].name,
-            id:data[i].bangumi_id,
-            cover_url:data[i].cover_url,
-            tags:data[i].tags
-        }
-        rec_info.animes.push(new_anime);
-    }
+       var new_anime={
+       'id':data[i].bangumi_id,
+       'url':data[i].cover_url,
+       'score':data[i].bangumi_score,
+       'name':data[i].name
 
-    });
     }
+    rec_info.animes.push(new_anime);
+   }
     
 });
 
@@ -72,7 +64,25 @@ var anime_info = new Vue({
        cv_list:''
     },
     methods:{
-
+        handle_fav:function(){
+            if(!sessionStorage.getItem('login_status')){
+                alert("请先登录");
+                window.location.href='/index.html';
+            }else{
+                var username = sessionStorage.getItem('username');
+                var req_id = this.bangumi_id;
+               
+                axios.get('http://167.179.119.126:1323/api/user/username/'+username+'/addBangumi/'+req_id).then(
+                    function(){
+                        
+                        var new_list = sessionStorage.getItem("fav_list")+','+req_id;
+                        console.log(new_list);
+                        sessionStorage.setItem("fav_list",new_list);
+                        alert("success");
+                    }
+                ); 
+            }
+        }
 
 
     }

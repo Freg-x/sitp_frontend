@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <div class="page">
+    <div class="page" >
       <!-- Page Header-->
       
 
@@ -59,8 +59,8 @@
               <!-- RD Search-->
               <form class="rd-form rd-search rd-form-inline" action="search-results.html" method="GET">
                 <div class="form-wrap">
-                  <input class="form-input" id="rd-search-form-input" type="text" name="s" autocomplete="off">
-                  <label class="form-label" for="rd-search-form-input">Enter a search request</label>
+                  <input class="form-input" id="rd-search-form-input" type="text" name="key" placeholder="Enter keywords">
+                 
                 </div>
                 <div class="form-button">
                   <button class="button button-primary" type="submit">Search</button>
@@ -72,76 +72,68 @@
         </div>
       </section>
 
+
+
       
-      <section class="section bg-default text-md-left">
+      <section class="section bg-default text-md-left" v-for="anime in results">
         <div class="container">
           <div class="row row-20 row-md-50 row-lg-60 justify-content-center align-items-md-center">
             <div class="col-sm-6 col-md-3 col-xl-4">
               <div class="inset-xl-right-20">
                 <div class="product-wrap-1 bg-image-1 block-1">
                   <!-- Owl Carousel-->
-                  <div class="owl-carousel owl-style-5" data-items="1" data-margin="30" data-dots="true" data-autoplay="true">
+                  
                     <article class="product-creative">
-                      <div class="product-figure"><img src="images/product-big-1-470x324.png" alt="" width="470" height="324"/>
+                      <div class="product-figure"><img v-bind:src="anime.url" alt="" width="470" height="324"/>
                       </div>
-                      <h4 class="product-creative-title"><a href="single-product.html">Beet Roots</a></h4>
+                      <h4 class="product-creative-title"><a v-bind:href="'/anime_info.html?id='+anime.id">{{anime.name}}</a></h4>
                       <div class="product-creative-price-wrap">
-                        <div class="product-creative-price product-creative-price-old">$30.00</div>
-                        <div class="product-creative-price">13.00</div>
+                      
+                        <div class="product-creative-price">{{anime.score}}</div>
                       </div>
                     </article>
-                  </div>
+                
                 </div>
               </div>
             </div>
 
             <div class="col-md-9 col-xl-8">
-              <h2 class="text-transform-capitalize wow fadeInRight">Why Go Vegan?</h2>
+              <h2 class="text-transform-capitalize wow fadeInRight">{{anime.name}}</h2>
               <!-- Bootstrap collapse-->
               <div class="card-group-custom card-group-corporate" id="accordion1" role="tablist" aria-multiselectable="false">
                 <!-- Bootstrap card-->
                 <article class="card card-custom card-corporate wow fadeInRight" data-wow-delay=".1s">
                   <div class="card-header" role="tab">
-                    <div class="card-title"><a id="accordion1-card-head-fvdtqdol" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-card-body-gbqibwcr" aria-controls="accordion1-card-body-gbqibwcr" aria-expanded="true" role="button">Be Healthier and Happier
+                    <div class="card-title"><a id="accordion1-card-head-fvdtqdol" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-card-body-gbqibwcr" aria-controls="accordion1-card-body-gbqibwcr" aria-expanded="true" role="button">剧情简介
                         <div class="card-arrow">
                           <div class="icon"></div>
                         </div></a></div>
                   </div>
                   <div class="collapse show" id="accordion1-card-body-gbqibwcr" aria-labelledby="accordion1-card-head-fvdtqdol" data-parent="#accordion1" role="tabpanel">
                     <div class="card-body">
-                      <p>Being vegan is great for your health! According to the Academy of Nutrition and Dietetics, vegans are less likely to develop heart disease, cancer, diabetes, and high blood pressure than meat-eaters are.</p>
+                      <p>{{anime.desc}}</p>
                     </div>
                   </div>
                 </article>
                 <!-- Bootstrap card-->
                 <article class="card card-custom card-corporate wow fadeInRight" data-wow-delay=".2s">
                   <div class="card-header" role="tab">
-                    <div class="card-title"><a class="collapsed" id="accordion1-card-head-mvowfrug" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-card-body-fyqmewaq" aria-controls="accordion1-card-body-fyqmewaq" aria-expanded="false" role="button">It’s the Best Way to Help Animals
+                    <div class="card-title"><a class="collapsed" id="accordion1-card-head-mvowfrug" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-card-body-fyqmewaq" aria-controls="accordion1-card-body-fyqmewaq" aria-expanded="false" role="button">核心staff
                         <div class="card-arrow">
                           <div class="icon"></div>
                         </div></a></div>
                   </div>
                   <div class="collapse" id="accordion1-card-body-fyqmewaq" aria-labelledby="accordion1-card-head-mvowfrug" data-parent="#accordion1" role="tabpanel">
                     <div class="card-body">
-                      <p>Did you know that every vegan saves nearly 200 animals per year? There is simply no easier way to help animals and prevent suffering than by choosing plant-based foods over meat, eggs, and dairy “products.”</p>
+                    <p>导演：{{anime.staff_list['导演']}}</p>
+                    <p>脚本：{{anime.staff_list['脚本']}}</p>
+                    <p>分镜：{{anime.staff_list['分镜']}}</p>
                     </div>
                   </div>
                 </article>
                 
                 <!-- Bootstrap card-->
-                <article class="card card-custom card-corporate wow fadeInRight" data-wow-delay=".3s">
-                  <div class="card-header" role="tab">
-                    <div class="card-title"><a class="collapsed" id="accordion1-card-head-iyjdbvli" data-toggle="collapse" data-parent="#accordion1" href="#accordion1-card-body-gowcmvoc" aria-controls="accordion1-card-body-gowcmvoc" aria-expanded="false" role="button">Slim Down and Become Energized
-                        <div class="card-arrow">
-                          <div class="icon"></div>
-                        </div></a></div>
-                  </div>
-                  <div class="collapse" id="accordion1-card-body-gowcmvoc" aria-labelledby="accordion1-card-head-iyjdbvli" data-parent="#accordion1" role="tabpanel">
-                    <div class="card-body">
-                      <p>Is shedding some extra pounds first on your list of goals for the new year? Vegans are, on average, up to 20 pounds lighter than meat-eaters are. And unlike unhealthy fad diets, which leave you feeling tired (and usually don’t keep the pounds off for long), going vegan allows you to keep the excess fat off for good and have plenty of energy.</p>
-                    </div>
-                  </div>
-                </article>
+               
               </div>
             </div>
 
@@ -153,8 +145,9 @@
           </div>
         </div>
       </section>
+    
 
-
+      
 
 
 
@@ -173,6 +166,7 @@
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/vm_search_results.js" type="module"></script>
   </body>
 </html>

@@ -51,7 +51,7 @@
                     <li><span class="contacts-classic-title">前端github地址</span> <a class="link" href="tel:#">https://github.com/Freg-x/sitp_frontend</a>
                     </li>
                     <li><a href="mailto:#">同济大学软件学院sitp</a></li>
-                  </ul><a class="rd-navbar-basket rd-navbar-basket-mobile fl-bigmug-line-shopping202" href="#"><span>2</span></a>
+                  </ul>
                 </div>
                 <!-- RD Navbar Panel-->
                 <div class="rd-navbar-panel">
@@ -99,8 +99,9 @@
 
                     <i class="fl-bigmug-line-close42 login_close" v-on:click="login_show=0"></i>
                     <div class="login_word" >登录</div>
-                    <input class=" form-input user_name"  type="text"   placeholder="用户名" >
-                    <input class=" form-input pass_word" placeholder="密码" type="password" >
+                    <input class=" form-input user_name"  type="text"   placeholder="用户名" v-model="user_name">
+                    <input class=" form-input pass_word" placeholder="密码" type="password" v-model="pass_word">
+                    <div class="button-wrap login_button" data-caption-animate="fadeInLeft" data-caption-delay="400"><a class="button button-lg button-shadow-5 button-default-outline button-zakaria" id="login_button" v-on:click="login_request">登录</a></div>
                   
 
                 </div>
@@ -188,7 +189,7 @@
                 <!--span class="product-badge product-badge-sale" --><!--/span-->
                 <div class="product-button-wrap">
                   <div class="product-button"><a class="button button-secondary button-zakaria fl-bigmug-line-search74" v-bind:href="'anime_info.html?id='+anime.id"></a></div>
-                  <div class="product-button"><a class="button button-primary button-zakaria fl-bigmug-line-favourites5" href="#"></a></div>
+                  <div class="product-button"><a class="button button-primary button-zakaria fl-bigmug-line-favourites5" v-bind:id="'fav'+anime.id" v-on:click="handle_fav"></a></div>
                 </div>
               </article>
             </div>
@@ -224,36 +225,29 @@
             <div class="row row-30 justify-content-center">
               <div class="col-6 col-sm-3">
                 <div class="counter-modern">
-                  <h2 class="counter-modern-number"><span class="counter">245</span>
+                  <h2 class="counter-modern-number"><span class="counter">223</span>
                   </h2>
                   <div class="counter-modern-decor"></div>
-                  <h5 class="counter-modern-title">New food products<br class="d-none d-sm-block"> and drinks</h5>
+                  <h5 class="counter-modern-title">番剧数据库</h5>
                 </div>
               </div>
               <div class="col-6 col-sm-3">
                 <div class="counter-modern">
-                  <h2 class="counter-modern-number"><span class="counter">182</span>
+                  <h2 class="counter-modern-number"><span class="counter">10000</span>
                   </h2>
                   <div class="counter-modern-decor"></div>
-                  <h5 class="counter-modern-title">Special<br class="d-none d-sm-block"> offers</h5>
+                  <h5 class="counter-modern-title">用户评分</h5>
                 </div>
               </div>
               <div class="col-6 col-sm-3">
                 <div class="counter-modern">
-                  <h2 class="counter-modern-number"><span class="counter">1267</span>
+                  <h2 class="counter-modern-number"><span class="counter">25</span>
                   </h2>
                   <div class="counter-modern-decor"></div>
-                  <h5 class="counter-modern-title">Satisfied<br class="d-none d-sm-block"> clients</h5>
+                  <h5 class="counter-modern-title">多类番剧信息</h5>
                 </div>
               </div>
-              <div class="col-6 col-sm-3">
-                <div class="counter-modern">
-                  <h2 class="counter-modern-number"><span class="counter">47</span>
-                  </h2>
-                  <div class="counter-modern-decor"></div>
-                  <h5 class="counter-modern-title">Partners throughout<br class="d-none d-sm-block"> the USA</h5>
-                </div>
-              </div>
+             
             </div>
           </div>
         </div>

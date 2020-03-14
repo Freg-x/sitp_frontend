@@ -6,6 +6,7 @@ window.onload = function(){
 
 
 
+navbar.login_status = sessionStorage.getItem("login_status");
    
 var search = window.location.search;
 var page_key = getSearchString('page',search);
@@ -45,7 +46,24 @@ var index_rec = new Vue({
         ]
     },
     methods:{
+        handle_fav:function(event){
 
+            if(!sessionStorage.getItem('login_status'))navbar.login_show = 1;
+            else {
+                var username = sessionStorage.getItem('username');
+                var el_id = event.target.id;
+                var req_id = el_id.substring(3);
+                axios.get('http://167.179.119.126:1323/api/user/username/'+username+'/addBangumi/'+req_id).then(
+                    function(){
+                        var new_list = sessionStorage.getItem("fav_list")+','+req_id;
+                        sessionStorage.setItem("fav_list",new_list);
+                    }
+                ); 
+        }
+
+           
+
+        }
     }
 })
 
@@ -57,12 +75,67 @@ var navbar = new Vue({
     el:'#navbar',
     data:{
         login_status:0,
-        login_show:0
+        login_show:0,
+        user_name:'',
+        pass_word:'',
+        success_username:''
     },
     methods:{
         handleClick:function(){
+           
+            if(!this.login_status||this.login_status == 0){
             this.login_show = 1;
-            console.log(index_rec.animes);
+        }else{
+            window.location.href="/my_page.html?name="+sessionStorage.getItem("username");
+        }
+
+    
+
+
+
+
+        },
+        login_request:function(){
+
+            var p_this = this;
+
+            var data = new FormData();
+            data.append('username',this.user_name);
+            data.append('password',this.pass_word);
+            
+            axios.post('http://167.179.119.126:1323/api/user/login',data)
+            .then(
+                function(response){
+                    
+                    axios.get('http://167.179.119.126:1323/api/user/username/'+p_this.user_name).then(
+                        function(response){
+                            var data = response.data;
+                            sessionStorage.setItem("login_status",1);
+                            sessionStorage.setItem("username",data.username);
+                            sessionStorage.setItem("avatar",data.avatar);
+                            sessionStorage.setItem("email",data.email);
+                            sessionStorage.setItem("fav_list",data.bangumi_list);
+                            p_this.login_status = 1;
+                            p_this.login_show = 0;
+                            window.location.href="my_page.html?name="+p_this.user_name;
+                        }
+                    );
+
+                    
+
+
+
+
+
+
+                }).catch(function(error){
+                    if(error.response)console.log(error);
+                })
+             
+           
+
+
+
         }
     }
 });
