@@ -55,8 +55,14 @@ var index_rec = new Vue({
                 var req_id = el_id.substring(3);
                 axios.get('http://167.179.119.126:1323/api/user/username/'+username+'/addBangumi/'+req_id).then(
                     function(){
-                        var new_list = sessionStorage.getItem("fav_list")+','+req_id;
-                        sessionStorage.setItem("fav_list",new_list);
+                        axios.get('http://167.179.119.126:1323/api/user/username/'+username).then(
+                        function(response){
+                            var data = response.data;
+                            sessionStorage.setItem("fav_list",data.bangumi_list);
+                            
+                            alert("收藏成功");
+                        }
+                    );
                     }
                 ); 
         }
@@ -129,7 +135,9 @@ var navbar = new Vue({
 
 
                 }).catch(function(error){
-                    if(error.response)console.log(error);
+                    if(error.response){
+                        alert("登录失败，本站不开放注册，请以默认账户登录");
+                    }
                 })
              
            

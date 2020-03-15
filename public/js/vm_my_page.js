@@ -89,7 +89,29 @@ var my_fav = new Vue({
                 var username = sessionStorage.getItem('username');
                 var el_id = event.target.id;
                 var req_id = el_id.substring(3);
-                console.log(req_id);
+                var p_this = this;
+
+                axios.get("http://167.179.119.126:1323/api/user/username/"+username+"/removeBangumi/"+req_id).then(
+                    function(){
+                        axios.get('http://167.179.119.126:1323/api/user/username/'+username).then(
+                            function(response){
+                                
+                                for(var i = 0; i < p_this.fav_list.length;i++){
+                                   if(p_this.fav_list[i].id == req_id){p_this.fav_list.splice(i,1);break;}
+                                }
+                                var data = response.data;
+                                sessionStorage.setItem("fav_list",data.bangumi_list);
+                                alert("成功取消收藏");
+                            }
+                        );
+
+
+
+                    }
+                )
+
+
+                
               
         },
         handle_logout:function(){

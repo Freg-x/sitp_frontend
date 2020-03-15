@@ -63,6 +63,16 @@ var anime_info = new Vue({
        staff_list:'',
        cv_list:''
     },
+    computed: {
+        one_star_array:function(){
+            var result = [];
+            for(var i = 1;i <= this.bangumi_score/2;i++)result.push(1);
+            return result;
+        },
+        half_star:function(){
+            return parseInt(this.bangumi_score + 0.5) % 2 == 0?0:1;
+        }
+    },
     methods:{
         handle_fav:function(){
             if(!sessionStorage.getItem('login_status')){
@@ -75,18 +85,23 @@ var anime_info = new Vue({
                 axios.get('http://167.179.119.126:1323/api/user/username/'+username+'/addBangumi/'+req_id).then(
                     function(){
                         
-                        var new_list = sessionStorage.getItem("fav_list")+','+req_id;
-                        console.log(new_list);
-                        sessionStorage.setItem("fav_list",new_list);
-                        alert("success");
+                        axios.get('http://167.179.119.126:1323/api/user/username/'+username).then(
+                        function(response){
+                            var data = response.data;
+                            sessionStorage.setItem("fav_list",data.bangumi_list);
+                            alert("收藏成功");
+                        
                     }
                 ); 
+                
             }
+                );
         }
 
 
     }
-});
+}})
+
 
 
 
