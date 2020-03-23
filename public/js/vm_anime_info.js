@@ -10,9 +10,47 @@ var anime_id = getSearchString('id',search);
 
 axios.get('http://167.179.81.168/bangumi/'+anime_id)
 .then(function(response){
- 
     var data = response.data[0];
 
+    console.log(data);
+
+
+
+   
+            
+    var new_str = '';
+    for(var j = 0;j < data.staff_list.length;j++){
+        if(data.staff_list[j] == '\''){
+            if(data.staff_list[j-1]==','||data.staff_list[j+1]==','||data.staff_list[j-1]==':'||data.staff_list[j+1]==':'||data.staff_list[j-1]=='{'||data.staff_list[j+1]=='}'){
+                new_str+='\"';continue;
+            }
+            else {new_str+='‘';continue;}
+        }
+        if(data.staff_list[j] == '\"'){new_str+='“';continue;}
+        new_str+=data.staff_list[j];
+    }
+    
+
+    var staff_list = JSON.parse(new_str);
+    var main_list = {};
+    var other_info = {};
+
+    
+
+    for(let attribute in staff_list){
+       
+       
+      if(attribute == '导演'||attribute == '总导演'||attribute == '副导演'||attribute == '脚本'||attribute == '音乐'||attribute == '作画监督'||attribute == '总作画监督'){
+          main_list[attribute] = staff_list[attribute];
+      }
+      else other_info[attribute] = staff_list[attribute];
+    }
+    console.log(main_list);
+
+
+
+
+    anime_info.staff_list = staff_list;
     anime_info.name = data.name;
     anime_info.bangumi_id = data.bangumi_id;
     anime_info.cover_url = data.cover_url;
@@ -20,7 +58,8 @@ axios.get('http://167.179.81.168/bangumi/'+anime_id)
     anime_info.vote_num = data.vote_num;
     anime_info.episode_num = data.episode_num;
     anime_info.desc = data.desc;
-    anime_info.staff_list = data.staff_liste;
+    anime_info.main_list = main_list;
+    anime_info.other_info  = other_info;
     anime_info.cv_list = data.cv_list;
 
 });
@@ -60,7 +99,9 @@ var anime_info = new Vue({
        vote_num:'',
        episode_num:'',
        desc:'',
-       staff_list:'',
+       main_list:[],
+       other_info:[],
+       cv_list:[],
        cv_list:''
     },
     computed: {
