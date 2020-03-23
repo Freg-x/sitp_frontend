@@ -177,7 +177,7 @@
                   <!--span class="product-badge product-badge-sale" --><!--/span-->
                   <div class="product-button-wrap">
                     <div class="product-button"><a class="button button-secondary button-zakaria fl-bigmug-line-search74" v-bind:href="'anime_info.html?id='+anime.id"></a></div>
-                    <div class="product-button"><a class="button button-primary button-zakaria fl-bigmug-line-favourites5" href="#"></a></div>
+                    <div class="product-button"><a class="button button-primary button-zakaria fl-bigmug-line-favourites5" v-on:click="handleRecFav" v-bind:id="'fav'+anime.id"></a></div>
                   </div>
                 </article>
               </div>

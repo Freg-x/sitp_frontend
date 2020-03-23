@@ -153,6 +153,29 @@ data:{
 
     ],
 
+
+},
+methods:{
+    handleRecFav:function(){
+        if(!sessionStorage.getItem('login_status'))alert("请先登录");
+        else {
+            var username = sessionStorage.getItem('username');
+            var el_id = event.target.id;
+            var req_id = el_id.substring(3);
+            axios.get('http://167.179.119.126:1323/api/user/username/'+username+'/addBangumi/'+req_id).then(
+                function(){
+                    axios.get('http://167.179.119.126:1323/api/user/username/'+username).then(
+                    function(response){
+                        var data = response.data;
+                        sessionStorage.setItem("fav_list",data.bangumi_list);
+                        
+                        alert("收藏成功");
+                    }
+                );
+                }
+            ); 
+    }
+    }
 }
 
 });
